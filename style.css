@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+}
+body {
+    background-image: url(images/evening.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+#nav {
+    background-color: rgb(24, 24, 24);
+    padding: 1rem 2rem 1rem 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    justify-content: space-between;
+}
+#nav > div {
+    display: flex;
+    gap: 10px;
+}
+#nav i {
+    font-size: 2rem;
+}
+#nav input {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid rgb(152, 152, 152);
+    font-size: 1rem;
+    width: 25vw;
+    min-width: 200px;
+}
+#nav input:focus {
+    outline:none;
+}
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 25px;
+    padding: clamp(30px, 5vw, 20px);
+    min-height: 0;
+}
+#gridContainer h2 {
+    font-size: 1.8rem;
+}
+#mainBlock h2 {
+    font-size: 2.2rem;
+}
+#gridContainer h2 > span.small {
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+#gridContainer h3 > span.small {
+    font-weight: 100;
+    font-size: 1.4rem;
+}
+#gridContainer h4 > span.small {
+    font-weight: 100;
+    font-size: 1.3rem;
+}
+#gridContainer h2, 
+#gridContainer h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#gridContainer h3 {
+    font-size: 1.5rem;
+}
+
+#gridContainer h4 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    font-size: 1.8rem;
+}
+#gridContainer h5 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(234, 234, 234);
+    font-size: 1rem;
+}
+#gridContainer > #mainBlock,
+#column2 > div,
+#column3 > div {
+    background-color: rgba(43, 42, 48, 0.275);
+    border: 1.5px solid rgba(0, 0, 0, 0.381);
+    border-radius: 50px;
+    padding: 40px;
+    color: white;
+}
+#column2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+    min-height: 0;
+}
+#column2 > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    justify-content: space-between;
+}
+#column2 > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#column3 > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    justify-content: space-between;
+}
+#column3 > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#column3 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+    min-height: 0;
+}
+#gridContainer > #mainBlock {
+    display: grid;
+    padding: 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+}
+#infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    grid-column: 1/3;
+}
+#temp {
+    grid-row: 2;
+    font-size: 12rem;
+    align-self: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#tempExtras {
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#tempRange {
+    display: flex;
+    gap: 4vw;
+}
+#gridContainer #description {
+    width: 100%;
+    font-weight: 100;
+    font-size: 1.4rem;
+}
+/* .small {
+    font-weight: 100;
+    font-size: 1.8rem;
+} */
+@media screen and (max-width: 1250px) {
+    #temp {
+        font-size: 10rem;
+    }
+    #gridContainer > #mainBlock,
+    #column2 > div,
+    #column3 > div {
+       padding: 30px;
+    }
+    #gridContainer h2 {
+        font-size: 1.4rem;
+    }
+    #mainBlock h2 {
+        font-size: 1.8rem;
+    }
+    #gridContainer h4 {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 1050px) {
+    #temp {
+        font-size: 8rem;
+    }
+}
+@media screen and (max-width: 850px) {
+    #gridContainer {
+        gap: 15px;
+    }
+    #temp {
+        font-size: 5rem;
+    }
+    #gridContainer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    #mainBlock {
+        grid-column: 1/3;
+        grid-row: 1;
+        max-height: 30vw;
+    }
+    #column2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #column3 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+@media screen and (max-width: 750px) {
+    #temp {
+        font-size: 3rem;
+    }
+    #gridContainer > #mainBlock,
+    #column2 > div,
+    #column3 > div {
+       max-height: 200px;
+       overflow: hidden;
+    }
+    #gridContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    body {
+        min-height: 100vh;
+    }
+}
+@media screen and (max-width: 675px) {
+    #gridContainer > #mainBlock,
+    #column2 > div,
+    #column3 > div {
+       max-height: 130px;
+       padding: 25px;
+    }
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #nav input {
+        width: 50vw;
+    }
+    #temp {
+        font-size: 1.5rem;
+    }
+    #gridContainer h2 {
+        font-size: 1.1rem;
+    }
+    #mainBlock h2 {
+        font-size: 1.3rem;
+    }
+    #gridContainer h3 {
+        font-size: 1rem;
+    }
+    #gridContainer h4 {
+        font-size: 1rem;
+    }
+    #gridContainer #description {
+        font-size: .8rem;
+    }
+    #gridContainer h2 > span.small {
+    font-weight: 100;
+    font-size: 1.1rem;
+    }
+    #gridContainer h3 > span.small {
+        font-weight: 100;
+        font-size: 1rem;
+    }
+    #gridContainer h4 > span.small {
+        font-weight: 100;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:400px) {
+    #gridContainer h2 {
+        font-size: 1rem;
+    }
+    #mainBlock h2 {
+        font-size: 1.1rem;
+    }
+    #gridContainer h3 {
+        font-size: .8rem;
+    }
+    #gridContainer h4 {
+        font-size: .8rem;
+    }
+    #gridContainer #description {
+        font-size: .7rem;
+    }
+}
