@@ -1,36 +1,36 @@
 const weather = (function () {
     const cityForm = document.querySelector('#cityForm');
     const now = new Date();
-    let weatherData = {
-        city: "New York",
-        date: now,
-        temp: 50,
-        tempHigh: 64,
-        tempLow: 48,
-        description: "Cooling down with a chance of rain multiple days",
-        feelsLike: 45,
-        summary: "Partially Cloudy",
-        precipitation: 0,
-        probability: 5,
-        cloudCover: 9.9,
-        windSpeed: 9.2,
-        windGust: 9.0,
-        windDirection: 231,
-        uv: 3,
-        solarRadiation: 123,
-        solarEnergy: .6,
-        humidity: 54.3,
-        pressure: 2,
-        visibility: 9.9,
-        sunrise: "06:41:21",
-        sunset: "06:41:21",
-    }
+    
     cityForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const cityInput = document.querySelector('#cityInput');
         const place = cityInput.value;
-        const data = await getWeather(place);
-        weatherData = {
+        
+        await loadWeather(place)
+        cityForm.reset();
+        
+    });
+    return {
+        // weatherData
+        now
+    }
+})();
+async function getWeather(place) {
+    try {
+        url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + place + "?key=W9XMRR8NL9CM34QWFUH9LVAKP";
+        const weatherUnprocessed = await fetch(url);
+        const weatherProcessed = await weatherUnprocessed.json();
+        return weatherProcessed;
+    }
+    catch(err) {
+        alert(err);
+    }
+}
+async function loadWeather(place) {
+    const data = await getWeather(place);
+    const now = new Date();
+    const weatherData = {
             city: data.address,
             date: now,
             temp: data.days[0].temp,
@@ -54,24 +54,7 @@ const weather = (function () {
             sunrise: data.days[0].sunrise,
             sunset: data.days[0].sunset,
         }
-        console.log(weatherData);
-        cityForm.reset();
-        renderer.updateWeather(weatherData);
-    });
-    return {
-        weatherData
-    }
-})();
-async function getWeather(place) {
-    try {
-        url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + place + "?key=W9XMRR8NL9CM34QWFUH9LVAKP";
-        const weatherUnprocessed = await fetch(url);
-        const weatherProcessed = await weatherUnprocessed.json();
-        return weatherProcessed;
-    }
-    catch(err) {
-        alert(err);
-    }
+    renderer.updateWeather(weatherData)
 }
 const renderer = (function ScreenController() {
     function updateBackground(hour) {
@@ -98,7 +81,7 @@ const renderer = (function ScreenController() {
             const element = document.querySelector("#" + key);
             if(element) {
                 if(key == "temp" || key=="tempHigh" || key=="tempLow") {
-                    const prefix = "";
+                    let prefix = "";
                     if(key=="tempHigh") {
                         prefix = "High: "
                     }
@@ -123,4 +106,6 @@ const renderer = (function ScreenController() {
         updateWeather
     }
 })();
-renderer.updateBackground(weather.weatherData.date.getHours());
+renderer.updateBackground(weather.now.getHours());
+loadWeather("New York");
+
