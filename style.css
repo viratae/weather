@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
 }
-html {
-}
 body {
     background-image: url(images/evening.jpg);
     background-size: cover;
@@ -56,17 +54,13 @@ body {
 #mainBlock h2 {
     font-size: 2.2rem;
 }
-#gridContainer h2 > span.small {
+span.small {
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: .8em;
 }
-#gridContainer h3 > span.small {
+.unit {
+    font-size: .7em;
     font-weight: 100;
-    font-size: 1.4rem;
-}
-#gridContainer h4 > span.small {
-    font-weight: 100;
-    font-size: 1.3rem;
 }
 #gridContainer h2, 
 #gridContainer h3 {
@@ -263,18 +257,6 @@ body {
     }
     #gridContainer #description {
         font-size: .8rem;
-    }
-    #gridContainer h2 > span.small {
-    font-weight: 100;
-    font-size: 1.1rem;
-    }
-    #gridContainer h3 > span.small {
-        font-weight: 100;
-        font-size: 1rem;
-    }
-    #gridContainer h4 > span.small {
-        font-weight: 100;
-        font-size: 1rem;
     }
 }
 @media screen and (max-width:400px) {
