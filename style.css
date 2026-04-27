@@ -156,10 +156,22 @@ span.small {
     font-weight: 100;
     font-size: 1.4rem;
 }
-/* .small {
-    font-weight: 100;
-    font-size: 1.8rem;
-} */
+#footer {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+}
+#footer a {
+    text-decoration: none;
+    color: rgb(109, 175, 255);
+}
 @media screen and (max-width: 1250px) {
     #temp {
         font-size: 10rem;

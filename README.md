@@ -14,4 +14,5 @@
 
 ## Demo
 ![Screenshot of New York's weather with dark night background](images/exampleNight.png)
+![Screenshot of Los Angeles's weather with dark night background](images/exampleMorning.png)
 
