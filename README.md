@@ -1,5 +1,5 @@
 # Welcome to Better Weather 🌤️
-## &rarr; [Live Preview](https://viratae.github.io/weather/)
+### &rarr; [Live Preview](https://viratae.github.io/weather/)
 
 ## Better Weather displays what you need in a single snapshot using [Visual Crossing API](https://www.visualcrossing.com/). No scrolling, extra searching, or confusing navigation
 
