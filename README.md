@@ -8,9 +8,9 @@
 - **Changes background** depending on time of day
 
 ## Built With
-- JavaScript
-- CSS
-- HTML
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,git,github,vscode)](https://skillicons.dev)
+
+*(Javascript, HTML, CSS, Git, GitHub, Visual Studio Code)*
 
 ## Demo
 ![Screenshot of New York's weather with dark night background](images/exampleNight.png)
